@@ -11,14 +11,10 @@
             "id": "28bf567319e2b293",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Product Requirements/Example/PRD.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "PRD"
+              "title": "New tab"
             }
           }
         ]
@@ -164,9 +160,13 @@
   },
   "active": "28bf567319e2b293",
   "lastOpenFiles": [
-    "Product Requirements/Locksmith 2/One Pager.md",
-    "Product Requirements/Example/PRD.md",
     "Product Requirements/Locksmith 2/PRD.md",
+    "Product Requirements/Example/PRD.md",
+    "Product Requirements/Locksmith 2/PRD-LS2.md",
+    "Product Requirements/Example/PRD-Example.md",
+    "Product Requirements/Locksmith 2/PRD-Example.md",
+    "Product Requirements/Example/PRD-LS2.md",
+    "Product Requirements/Locksmith 2/One Pager.md",
     "Product Requirements/Locksmith Pro/PRD.md",
     "Product Requirements/Locksmith Pro/One Pager.md",
     "Product Requirements/Example/One Pager.md",
