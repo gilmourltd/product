@@ -9,6 +9,19 @@
 - ESC1-8, 11, 13, 15 (M)
 - Excellent Error Handling for Failed Detections (M)
 	- i.e. should never see 'Not applicable' or 'Not available'
+- If forest is multi-domain, ensure the Cert Publishers group in each domain is of the correct scope (domain local) and ensure that group contains all Issuing CAs in the forest, regardless of domain.
+- Check if CA is installed on domain controller.
+- Check ACLs on userCertificates value for all users.
+- Ensure all values in userCertificates attribute match certificates issued by a trusted CA.
+- Does the membership of Cert Publishers contain the same number of computers as the number of pKIEnrollmentService objects? If not, this is a finding.
+- Does the Cert Publishers group only contain computers?
+- Are certs *actually* used for authentication? 
+- Is the number of CA certs trusted in the NTAuthCertificates object equal to or less than the total number of CAs? If more than, might be rogue CA (but likely is cleanup.)
+	- Additional trusted CA certificates could possibly be from CAs in trusted forests for some orgs.
+- check how CA's private key is being stored.
+	- If on-disk, verify local Administrators group of CA host and strongly recommend HSM/TPM.
+	- Otherwise, confirm hardware holding key is disconnected from CA.
+- Check if Enrollment Agents have been properly scoped. By default, any principal can be an Enrollment Agent, but this can be modified
 - Missing Auditing GPOs
 - Certifried
 - ESC9, 10, 12, 14
