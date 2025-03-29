@@ -99,6 +99,13 @@ Password: hunter2
 - No TUI/GUI
 - Single command: `Invoke-LS2Headless`
 - Returns full-featured objects to pipeline for further processing
+#### Cmdlets
+- Find-LS2VulnerableTemplates
+- Find-LS2VulnerableObjects
+- Find-LS2VulnerableCAs
+- Find-LS2MostAbusableTemplates
+- Find-LS2MostDangerousPrincipals
+- Find-LS2DangerousCombinations
 
 [^1]: (A) denotes alpha/pre-MVP requirement
 [^2]:(M) denotes minimum viable product requirement
@@ -108,8 +115,6 @@ Password: hunter2
 What features have you explicitly decided not to do and why?
 - #### Automatic Attacks
 	- Could we make evil Locksmith 2? Obvi. But we will not.
-- #### Feature 2 
-- #### Feature 3 
 ## Design
 Include any needed early sketches, and throughout the project, link to the actual designs once they’re available.
 ## Technical Considerations
