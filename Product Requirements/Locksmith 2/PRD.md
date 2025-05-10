@@ -97,7 +97,7 @@ Password: hunter2
 - PowerShell 5.1
 - No 3rd party modules required
 - No TUI/GUI
-- Single command: `Invoke-LS2Headless`
+- Single command: `Invoke-LS2`
 - Returns full-featured objects to pipeline for further processing
 #### Cmdlets
 - Find-LS2VulnerableTemplates
