@@ -100,12 +100,19 @@ Password: hunter2
 - Single command: `Invoke-LS2`
 - Returns full-featured objects to pipeline for further processing
 #### Cmdlets
-- Find-LS2VulnerableTemplates
-- Find-LS2VulnerableObjects
-- Find-LS2VulnerableCAs
-- Find-LS2MostAbusableTemplates
-- Find-LS2MostDangerousPrincipals
-- Find-LS2DangerousCombinations
+- Find-LS2VulnerableTemplate
+- Find-LS2VulnerableObject
+- Find-LS2VulnerableCA
+- Find-LS2MostAbusableTemplate
+- Find-LS2MostDangerousPrincipal
+- Find-LS2DangerousCombination
+* Find-LS2SuspiciousEnrollment:
+    * All requests w/SAN of Tier 0 objects
+    * Compare total enrollment volume vs issued w/SAN
+    * Compare typical requestor vs individual requests
+    * Compare volume of Requestor = SAN vs Requestor != SAN
+    * Identify non-standard issuance times (either time of day of time of year)
+    * Identify Manager Approval bypass (temp disable of Manager Approval)
 
 [^1]: (A) denotes alpha/pre-MVP requirement
 [^2]:(M) denotes minimum viable product requirement

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Product Requirements/Locksmith 2/Roadmap.md",
+                "file": "Product Requirements/Locksmith 2/PRD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Roadmap"
+              "title": "PRD"
             }
           },
           {
@@ -179,10 +179,10 @@
   },
   "active": "10aa06c9e2357d94",
   "lastOpenFiles": [
+    "Product Requirements/Locksmith 2/One Pager.md",
     "Product Requirements/Locksmith 2/Pseudocode.md",
     "Product Requirements/Locksmith 2/Roadmap.md",
     "Product Requirements/Locksmith 2/PRD.md",
-    "Product Requirements/Locksmith 2/One Pager.md",
     "Product Requirements/Locksmith Pro/PRD.md",
     "Product Requirements/Locksmith Pro/One Pager.md",
     "Product Requirements/Example/PRD.md",
