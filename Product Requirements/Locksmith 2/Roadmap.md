@@ -1,21 +1,16 @@
 # ~~Milestone: PSCertutil~~
-- ~~Must collect all data needed for Locksmith 1
-- ~~Must output structured objects
+- ~~Must collect all data needed for Locksmith 1~~
+- ~~Must output structured objects~~
 - Should collect full CA names 
 - Should collect issuance history
 - Should collect recently issued certs (default timespan = 30 days, but configurable)
 - Should collect recently failed cert requests
 - Should get pending requests
 - Should get active/effective certs
-- Should get suspicious enrollments
-	- All requests w/SAN of Tier 0 objects
-	* Compare total enrollment volume vs issued w/SAN
-	* Compare typical requestor vs individual requests
-	* Compare volume of Requestor = SAN vs Requestor != SAN
-	* Identify non-standard issuance times (either time of day of time of year)
-	* Identify Manager Approval bypass (temp disable of Manager Approval)
+# Side Quest: 
+Figure out how requests from Certify/Certipy/etc. look different from typical certs, **if at all.**
 # Milestone: Tactical Speed Square
-- Must create objects/templates of correct type, probably via AD CS cmdlets
+- Must create objects/templates of correct type, possibly via AD CS cmdlets, maybe via PSPKI.
 - Should deploy AD CS role if not installed
 - Should use PS AD module
 # Milestone: Snapshot Tool

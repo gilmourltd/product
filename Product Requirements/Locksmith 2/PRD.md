@@ -107,7 +107,7 @@ Password: hunter2
 - Find-LS2MostDangerousPrincipal
 - Find-LS2DangerousCombination
 * Find-LS2SuspiciousEnrollment:
-    * All requests w/SAN of Tier 0 objects
+    * All requests w/SAN of Tier 0 principals
     * Compare total enrollment volume vs issued w/SAN
     * Compare typical requestor vs individual requests
     * Compare volume of Requestor = SAN vs Requestor != SAN
