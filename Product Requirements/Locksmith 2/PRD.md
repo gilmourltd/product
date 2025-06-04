@@ -133,8 +133,10 @@ Include any needed early sketches, and throughout the project, link to the actua
 - PSSQLite
 - PwshSpectreConsole
 - PSWriteHTML
-- PwshCertutil
+- PSCertutil
+
 **Any third-party modules _must_ be includable in distribution.**
+
 #### Possible Additional Languages Required:
 - SQL
 - JSON
