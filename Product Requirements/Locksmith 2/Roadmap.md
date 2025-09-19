@@ -10,9 +10,9 @@
 # Side Quest: 
 - [ ] Figure out how requests from Certify/Certipy/etc. look different from typical certs, **if at all.**
 # Milestone: ADCSGoat
-- [ ] Must create objects/templates of correct type, possibly via AD CS cmdlets, maybe via PSPKI.
-- [ ] Should deploy AD CS role if not installed.
-- [ ] Should not use PS AD module
+- [x] Must create objects/templates of correct type, possibly via AD CS cmdlets, maybe via PSPKI.
+- [x] Should deploy AD CS role if not installed.
+- [x] Should not use PS AD module
 # Milestone: Snapshot Tool
 - [ ] Must collect full objects in PKS container + + all principals in all ACLs
 - [ ] Must collect as XML or JSON
