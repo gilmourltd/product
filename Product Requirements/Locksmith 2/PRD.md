@@ -6,7 +6,7 @@
 - Integration Testing
 #### Detections
 - Auditing (M)[^2]
-- ESC1-8, 11, 13, 15 (M)
+- ESC1-8, 11, 13, 15, 16 (M)
 - Excellent Error Handling for Failed Detections (M)
 	- i.e. should never see 'Not applicable' or 'Not available'
 - If forest is multi-domain, ensure the Cert Publishers group in each domain is of the correct scope (domain local) and ensure that group contains all Issuing CAs in the forest, regardless of domain.
@@ -24,7 +24,7 @@
 - Check if Enrollment Agents have been properly scoped. By default, any principal can be an Enrollment Agent, but this can be modified
 - Missing Auditing GPOs
 - Certifried
-- ESC9, 10, 12, 14
+- ESC9, 10, 14
 #### Remediation
 - Fix Code for Most Detections (M)
 	- If fix code not possible, LS2 should provide multiple options and include the relative risk associated with each.
