@@ -34,7 +34,7 @@ To get started, run Invoke-Locksmith2
 	- }
 	- IF Console Host NOT Windows Terminal: recommend Windows Terminal
 	- WHEN Modules NOT installed: offer to install missing modules
-		- IF PSSQLite refused: Fail
+		- TODO IF PSSQLite refused: Fail
 		- IF PwshCertutil refused: Fail
 		- IF PwshSpectreConsole refused: Fail and recommend Headless Version
 		- IF PSWriteHTML refused: Warn no HTML/PDF/Excel/CSV Output
@@ -49,9 +49,11 @@ To get started, run Invoke-Locksmith2
 ### Domain/Forest Check
 - CHECK silently (no PwshSpectreConsole functionality required):
 	- {
-		- IF neither computer nor user is a member of a domain: ask for domain user credentials and attempt authentication
-			- IF successful: continue in **domain user context**
-			- ELSE: fail
+		- IF neither computer nor user is a member of a domain: attempt anonymous enumeration
+            - IF successful: continue in **anonymous context** and warn about low quality results
+            - ELSE: ask for domain user credentials and attempt authentication
+                - IF successful: continue in **domain user context**
+                - ELSE: fail
 		- ELSE IF the user is NOT a member of a domain: CHECK if local admin
 			- IF the user is a local admin: attempt to elevate to SYSTEM
 				- IF successful: continue in **computer context**
