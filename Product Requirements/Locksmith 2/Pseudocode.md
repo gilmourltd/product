@@ -43,36 +43,30 @@ To get started, run Invoke-Locksmith2
 			- Update `$PROFILE`
 			- Exit Locksmith 2 with notice on how to reload profile and restart Locksmith 2: `. $PROFILE; Invoke-Locksmith2`
 		- ELSE: warn about degraded TUI quality
-	- IF NerdFont NOT installed: suggest installing NerdFont
+	- TODO IF NerdFont NOT installed: suggest installing NerdFont
 		- NOTE: https://stackoverflow.com/questions/62458016/detect-which-font-is-in-use-by-powershell-session only works in conhost.exe and method is deprecated
 - ELSE: continue
 ### Domain/Forest Check
 - CHECK silently (no PwshSpectreConsole functionality required):
 	- {
-		- IF neither computer nor user is a member of a domain: attempt anonymous enumeration
-            - IF successful: continue in **anonymous context** and warn about low quality results
-            - ELSE: ask for domain user credentials and attempt authentication
-                - IF successful: continue in **domain user context**
-                - ELSE: fail
-		- ELSE IF the user is NOT a member of a domain: CHECK if local admin
-			- IF the user is a local admin: attempt to elevate to SYSTEM
+		- IF user is member of a domain: continue in **domain user context**
+        - ELSE IF computer is member of a domain: CHECK if user is local admin
+			- TODO IF the user is a local admin: attempt to elevate to SYSTEM
 				- IF successful: continue in **computer context**
-				- ELSE: fail
-			- ELSE Ask for domain user credentials and attempt authentication
-				- IF successful: continue in **domain user context**
-				- ELSE: fail
-		- ELSE: continue
+        - ELSE IF: ask for domain user credentials and attempt authentication
+            - IF successful: continue in **domain user context**
+        - ELSE IF: attempt anonymous enumeration
+            - IF successful: continue in **anonymous context** and warn about low quality results
+        - ELSE: Fail
 	- }
 ### Main Loop
 - IF first run
-	- OFFER tutorial
-	- SET color theme
+	- TODO OFFER tutorial
+	- TODO SET color theme
 - WRITE current environmental information:
-	- Current username in NTAccount format
-	- Member of BA/DA/EA (single-domain) or EA (multi-domain)?
+	- Runtime context (user, computer, local/anonymous) in NTAccount format
 	- Local admin?
 	- Elevated prompt?
-	- Current computername in NTAccount format
 	- Current forest root domain in FQDN and NetBIOS formats
 		- Example: `Forest root domain: horse.ad (HORSE)`
 	- Other domains in FQDN and NetBIOS forest
@@ -84,13 +78,14 @@ To get started, run Invoke-Locksmith2
 			- filly.horse.ad   (FILLY)
 			- gelding.horse.ad (GELDING)
 ```
-- {
+	- Member of BA/DA/EA (single-domain) or EA (multi-domain)?
+- TODO {
 	- IF SQLite DB exists: offer to refresh data
 		- IF accepted: CPAP as if new
 		- ELSE: skip CPA, do P again
 	- ELSE create SQLite DB
 - }
-- ASK user to enter custom AD & PKI Admin groups. Accept Name, DN, CN, UPN, NTAccount
+- TODO ASK user to enter custom AD & PKI Admin groups. Accept Name, DN, CN, UPN, NTAccount
 - COLLECT data off-screen but show progress bars
 	- All objects from Public Key Services container
 	- All CA host computer object(s)
