@@ -18,20 +18,27 @@
 - Are certs *actually* used for authentication? 
 - Is the number of CA certs trusted in the NTAuthCertificates object equal to or less than the total number of CAs? If more than, might be rogue CA (but likely is cleanup.)
 	- Additional trusted CA certificates could possibly be from CAs in trusted forests for some orgs.
-- check how CA's private key is being stored.
+- Check how CA's private key is being stored.
 	- If on-disk, verify local Administrators group of CA host and strongly recommend HSM/TPM.
 	- Otherwise, confirm hardware holding key is disconnected from CA.
-- Check if Enrollment Agents have been properly scoped. By default, any principal can be an Enrollment Agent, but this can be modified
+- Check if Enrollment Agents/Certificate Manager have been properly scoped.
+	- By default, any principal can be an Enrollment Agent, but this can be modified
+	- By default, any Certificate Manager can Issue any pending cert, but this can be modified
 - Missing Auditing GPOs
 - Certifried
 - ESC9, 10, 14
+- Unreachable AIAs and CDPs: pkiview helps but doesn't show AIAs and CDPs
+- Flagging AIA and CDP locations that use hard-coded stuff
+- Single-tier deployment
+- Multi-tier infrastructure w/ single issuing CA instead of split CAs.
+- TameMyCerts not installed
 #### Remediation
 - Fix Code for Most Detections (M)
 	- If fix code not possible, LS2 should provide multiple options and include the relative risk associated with each.
-- Interactive Guidance for Detections that Require it (M)
+- Interactive Guidance for Detections that Require it
 	- Provide background information where necessary to help user make informed decision.
 	  Example: Instead of asking "Is this template frequently used?", Locksmith 2 should look at all CA databases to find issuance frequency and suggest the most likely answer. (M)
-- Revert Code for All Code-Based Fixes (M)
+- Revert Code for All Code-Based Fixes
 	-  If fix code not possible, LS2 should provide a path to undo any changes made manually.
 - Automated Fix for Most Detections
 	- Highlight operational impact.
@@ -43,7 +50,7 @@
 #### Risk Ratings
 - Per-Issue Ratings (like LS1) (M)
 - Show Per-Issue Risk Calculation (like LS1) (M)
-	- Include risks presented by other misconfigurations. (M)
+	- Include risks presented by other misconfigurations.
 	- Evaluate ACL-based risks on principals that can abuse issues.
 - Additional Risk Ratings:
 	- Per-template: count total number of individual principals that can abuse a specific template/object/CA/configuration.
@@ -57,6 +64,11 @@
 - HTML
 - CSV
 - PDF
+- Graphical representation of infrastructure:
+	- CAs
+	- AIA
+	- CDP
+	- Servers hosting those 
 #### Interactive Health Check
 - PowerShell version (M) - if not >= 7.4 warn of possibly degraded experience
 - Installed modules (M) - if missing, offer installation code
@@ -83,7 +95,7 @@ Password: hunter2
 [===============          55/90 objects ]
 ```
 #### Configuration Storage
-- Create JSON config file on first run unless runtime parameters sufficiently define configuration (M)
+- Create JSON config file on first run unless runtime parameters sufficiently define configuration
 #### Supporting/Educational Information
 - Every issue should include multiple levels of detail:
 	- Title (M)
@@ -93,6 +105,7 @@ Password: hunter2
 - Lab Creation Script
 	- Known Issues (same as Alpha requirement above) (A)
 	- Unknown Issues (semi-randomized)
+- Documentation on decommissioning CAs including caveats
 #### Headless Mode
 - PowerShell 5.1
 - No 3rd party modules required
