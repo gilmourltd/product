@@ -17,7 +17,7 @@
 - [ ] Must collect full objects in PKS container + + all principals in all ACLs
 - [ ] Must collect as XML or JSON
 # Milestone: ESCalator
-- [ ] Should be completed by October
-- [ ] Not specifically needed for Locksmith 2, but logic will be useful in LS2
+- [x] Should be completed by October
+- [x] Not specifically needed for Locksmith 2, but logic will be useful in LS2
 # Milestone: TUI
 - [ ] Should be completed by November
