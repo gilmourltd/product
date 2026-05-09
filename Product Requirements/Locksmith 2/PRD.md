@@ -70,7 +70,7 @@
 	- CDP
 	- Servers hosting those 
 #### Interactive Health Check
-- PowerShell version (M) - if not >= 7.4 warn of possibly degraded experience
+- PowerShell version (M) - fail if not 5.1+
 - Installed modules (M) - if missing, offer installation code
 - User privileges (M) - if not AD Admin, tell which checks may not work
 - Forest-joined status
@@ -107,11 +107,11 @@ Password: hunter2
 	- Unknown Issues (semi-randomized)
 - Documentation on decommissioning CAs including caveats
 #### Headless Mode
-- PowerShell 5.1
-- No 3rd party modules required
-- No TUI/GUI
+- No 3rd party modules required (applies to all runtimes)
 - Single command: `Invoke-LS2`
 - Returns full-featured objects to pipeline for further processing
+- Note: PS5.1 is now a first-class TUI runtime. Headless mode refers to pipeline/automation
+  use — not a PS5.1-specific degraded mode. See ADR-0002.
 #### Cmdlets
 - Find-LS2VulnerableTemplate
 - Find-LS2VulnerableObject
@@ -141,10 +141,9 @@ Include any needed early sketches, and throughout the project, link to the actua
 #### Primary Language:
 - PowerShell
 #### Target Powershell Version:
-- PowerShell 7.4 LTS
+- Windows PowerShell 5.1 and PowerShell 7.4 LTS (both first-class; see ADR-0002)
 #### Third-party PowerShell modules likely to be used:
 - PSSQLite
-- PwshSpectreConsole
 - PSWriteHTML
 - PSCertutil
 
